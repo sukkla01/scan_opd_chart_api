@@ -8,6 +8,8 @@ exports.findPatient = (req, res, next) => {
         connection.query(sql, (err, results) => {
             if (err) return next(err)
             res.header("Content-Type", "application/json; charset=utf-8");
+            res.charset = 'utf-8'
+            console.log(results)
             res.send(results)
         })
     })
